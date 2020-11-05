@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
             audioManager.setSpeakerphoneOn(true);
             Toast.makeText(MainActivity.this, "My Mode", Toast.LENGTH_SHORT).show();
         } else {
-            audioManager.setMode(AudioManager.MODE_NORMAL);
-            audioManager.setWiredHeadsetOn(false);
             audioManager.setSpeakerphoneOn(false);
             audioManager.setMode(AudioManager.MODE_IN_COMMUNICATION);
             audioManager.setWiredHeadsetOn(true);
