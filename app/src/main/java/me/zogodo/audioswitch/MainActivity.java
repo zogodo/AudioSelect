@@ -25,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
             audioManager.setWiredHeadsetOn(false);
             audioManager.setMode(AudioManager.MODE_IN_COMMUNICATION);
             audioManager.setSpeakerphoneOn(true);
-            Toast.makeText(MainActivity.this, "My Mode", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Force Speaker", Toast.LENGTH_SHORT).show();
         } else {
             audioManager.setSpeakerphoneOn(false);
             audioManager.setMode(AudioManager.MODE_IN_COMMUNICATION);
             audioManager.setWiredHeadsetOn(true);
-            Toast.makeText(MainActivity.this, "Reset OK", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "My Mode", Toast.LENGTH_SHORT).show();
         }
     }
 
