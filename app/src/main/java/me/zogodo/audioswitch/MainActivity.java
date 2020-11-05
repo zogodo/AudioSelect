@@ -22,19 +22,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View v) {
         if (v.getId() == R.id.button2) {
-            resetAudio();
-            myAudioMode();
-            Toast.makeText(MainActivity.this, "btn2", Toast.LENGTH_SHORT).show();
+            audioManager.setMode(AudioManager.MODE_IN_COMMUNICATION);
+            audioManager.setWiredHeadsetOn(true);
+            Toast.makeText(MainActivity.this, "My Mode", Toast.LENGTH_SHORT).show();
         } else {
-            resetAudio();
-            Toast.makeText(MainActivity.this, "btn1", Toast.LENGTH_SHORT).show();
+            audioManager.setMode(AudioManager.MODE_NORMAL);
+            audioManager.setWiredHeadsetOn(false);
+            audioManager.setSpeakerphoneOn(true);
+            Toast.makeText(MainActivity.this, "Reset OK", Toast.LENGTH_SHORT).show();
         }
     }
 
     void resetAudio() {
         audioManager.setMode(AudioManager.MODE_NORMAL);
-        audioManager.stopBluetoothSco();
-        audioManager.setBluetoothScoOn(false);
         audioManager.setSpeakerphoneOn(false);
         audioManager.setWiredHeadsetOn(false);
     }
