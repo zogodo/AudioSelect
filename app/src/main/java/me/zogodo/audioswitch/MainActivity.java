@@ -21,14 +21,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View v) {
-        if (v.getId() == R.id.button2) {
+        if (v.getId() == R.id.button1) {
+            audioManager.setWiredHeadsetOn(false);
             audioManager.setMode(AudioManager.MODE_IN_COMMUNICATION);
-            audioManager.setWiredHeadsetOn(true);
+            audioManager.setSpeakerphoneOn(true);
             Toast.makeText(MainActivity.this, "My Mode", Toast.LENGTH_SHORT).show();
         } else {
             audioManager.setMode(AudioManager.MODE_NORMAL);
             audioManager.setWiredHeadsetOn(false);
-            audioManager.setSpeakerphoneOn(true);
+            audioManager.setSpeakerphoneOn(false);
+            audioManager.setMode(AudioManager.MODE_IN_COMMUNICATION);
+            audioManager.setWiredHeadsetOn(true);
             Toast.makeText(MainActivity.this, "Reset OK", Toast.LENGTH_SHORT).show();
         }
     }
